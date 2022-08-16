@@ -1,0 +1,246 @@
+@-webkit-keyframes animer-sortie-message {
+  from {
+    transform: skew(0) translateX(-50%);
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  20% {
+    transform: skew(-30deg) translateX(-55%);
+    opacity: 1;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+  40% {
+    transform: skew(0) translateX(0%);
+    opacity: 1;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+  to {
+    transform: skew(30deg) translateX(100%);
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+}
+@keyframes animer-sortie-message {
+  from {
+    transform: skew(0) translateX(-50%);
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  20% {
+    transform: skew(-30deg) translateX(-55%);
+    opacity: 1;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+  40% {
+    transform: skew(0) translateX(0%);
+    opacity: 1;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+  to {
+    transform: skew(30deg) translateX(100%);
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+}
+body {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Slab", sans-serif;
+  overflow-x: hidden;
+}
+body a, body a:active, body a:link, body a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  font-family: "Roboto", serif;
+  margin: 0;
+  padding: 0;
+}
+body header {
+  margin: 0;
+}
+body header div.barre-haut {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body header nav {
+  background-color: #aaa;
+}
+body header nav ul {
+  margin: 0;
+  padding: 0;
+}
+body header nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0.75rem 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: white;
+  border: 2px solid #333;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+body header nav ul li:first-of-type {
+  margin-left: 1rem;
+}
+body header nav ul li.actif {
+  background-color: #005c4a;
+}
+body .msg-erreur {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #900;
+  color: #eee;
+  width: 40%;
+  margin: 0 auto 1rem auto;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  -webkit-animation: animer-sortie-message 0.75s 3s forwards;
+          animation: animer-sortie-message 0.75s 3s forwards;
+}
+body section.gestion-utilisateur form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 3rem auto;
+  font-family: "Roboto";
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+body section.gestion-utilisateur form legend {
+  background-color: #005c4a;
+  color: #eee;
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+body section.gestion-utilisateur form div.champs {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 1rem;
+  margin-top: 1rem;
+}
+body section.gestion-utilisateur form div.champs label {
+  text-align: right;
+  width: 25%;
+  padding-right: 1rem;
+}
+body section.gestion-utilisateur form div.champs input {
+  flex-grow: 1;
+  padding: 0.5rem;
+}
+body section.gestion-utilisateur form .btn {
+  margin: 1rem auto;
+}
+body section.gestion-utilisateur form div.lien {
+  display: flex;
+}
+body section.gestion-utilisateur form div.lien a {
+  margin: 0 0 1rem 1rem;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-size: 0.9rem;
+}
+body section.liste-enregistrements {
+  display: table;
+  width: 100%;
+  min-width: 70vw;
+  max-width: 90vw;
+  margin: 2rem auto;
+  font-family: "Roboto";
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+body section.liste-enregistrements h2 {
+  display: table-caption;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-size: 1.5rem;
+}
+body section.liste-enregistrements header {
+  display: table-row;
+  background-color: #005c4a;
+  color: white;
+  font-weight: bold;
+}
+body section.liste-enregistrements header span {
+  display: table-cell;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+body section.liste-enregistrements header span:first-of-type {
+  width: 1rem;
+}
+body section.liste-enregistrements header span.action {
+  width: 15rem;
+}
+body section.liste-enregistrements div.data {
+  display: table-row-group;
+}
+body section.liste-enregistrements div.data form {
+  display: table-row;
+  border-bottom: thin solid #aaa;
+}
+body section.liste-enregistrements div.data form:nth-of-type(even) {
+  background-color: #eee;
+}
+body section.liste-enregistrements div.data form:last-of-type {
+  border-bottom: 5px solid #005c4a;
+}
+body section.liste-enregistrements div.data form span {
+  display: table-cell;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+body section.liste-enregistrements div.data form span.action {
+  text-align: center;
+}
+body section.liste-enregistrements div.data form span input, body section.liste-enregistrements div.data form span select {
+  padding: 0.5rem;
+  background-color: inherit;
+}
+body section.liste-enregistrements div.data form span input {
+  width: 100%;
+}
+body section.liste-enregistrements div.data form:not(.nouveau) input, body section.liste-enregistrements div.data form:not(.nouveau) select {
+  border: none;
+}
+body .btn {
+  border: thin solid #aaa;
+  width: 40%;
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+body .btn.btn-plein {
+  width: calc(80% + 0.5rem);
+}
+body .btn.btn-ajouter, body .btn.btn-connexion {
+  background-color: #090;
+}
+body .btn.btn-modifier {
+  background-color: rgb(225, 146, 0);
+}
+body .btn.btn-supprimer {
+  background-color: #900;
+}

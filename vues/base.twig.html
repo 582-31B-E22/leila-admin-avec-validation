@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <base href="{{ constant('BASE_SERVEUR') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;900&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ressources/css/leila-admin.css">
+    <link rel="icon" type="image/png" href="ressources/images/favicon.png" />
+    {% block titrePage %}
+        <title>Admin :: Restaurant Leila</title>
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <div class="barre-haut">
+            <a href="{{ constant('BASE_SERVEUR') }}"><h2>Admin - Restaurant Leila</h2></a>
+            {% if session.utilisateur %}
+            <div class="profile">
+                <span class="courriel-connexion">{{session.utilisateur.uti_courriel}}</span>
+                (<a href="utilisateur/deconnexion">déconnexion</a>)
+            </div>
+            {% endif %}
+        </div>
+        
+        <nav class="navigation-principale">
+            <ul>
+                <li class="{{(page=='categorie') ? 'actif' : ''}}"><a href="categorie/tout">Catégories</a></li>
+                <li class="{{(page=='plat') ? 'actif' : ''}}"><a href="plat/tout">Plats</a></li>
+                <li class="{{(page=='vin') ? 'actif' : ''}}"><a href="vin/tout">Vins</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block main %}{% endblock %}
+
+    <script src="ressources/js/leila-admin.js"></script>
+</body>
+</html>

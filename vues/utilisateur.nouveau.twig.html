@@ -1,0 +1,29 @@
+{% extends "base.twig.html" %}
+{% block main %}
+    {# [MODIF HORS COURS] #}
+    {# Tous les messages d'erreurs sont affiché dans le bloc suivant dont l'affichage est géré en CSS #}
+    {% if erreur != '' %}
+    <div class="msg-erreur">{{erreur}}</div>
+    {% endif %}
+    <section class="gestion-utilisateur">
+        <form class="nouveau-compte" method="post" action="utilisateur/ajouter">
+            <legend>Créer un compte</legend>
+            <div class="champs">
+                <label for="uti_courriel">Courriel</label>
+                <input type="email" value="{{uti_courriel}}" name="uti_courriel" id="uti_courriel" placeholder="Adresse de courriel">
+            </div>
+            <div class="champs">
+                <label for="uti_mdp">Mot de passe</label>
+                <input type="password" name="uti_mdp" id="uti_mdp" placeholder="Mot de passe">
+            </div>
+            <div class="champs">
+                <label for="uti_mdp2">Mot de passe (confirmation)</label>
+                <input type="password" name="uti_mdp2" id="uti_mdp2" placeholder="Confirmer votre mot de passe">
+            </div>
+            <input class="btn btn-connexion" type="submit" value="Ouvrir le compte">
+            <div class="lien">
+                <a href="utilisateur/index">Se connecter</a>
+            </div>
+        </form>
+    </section>
+{% endblock %}

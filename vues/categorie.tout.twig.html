@@ -1,0 +1,53 @@
+{% extends "base.twig.html" %}
+{% block titrePage %}
+<title>Catégories | Admin :: Restaurant Leila</title>
+{% endblock %}
+{% block main %}
+    {# [MODIF HORS COURS] #}
+    {# Tous les messages d'erreurs sont affiché dans le bloc suivant dont l'affichage est géré en CSS #}
+    {% if erreur != '' %}
+        <div class="msg-erreur">{{erreur}}</div>
+    {% endif %}
+    <section class="liste-enregistrements">
+        <h2><code>Catégories</code></h2>
+        <header>
+            <span>id</span>
+            <span>nom</span>
+            <span>type</span>
+            <span class="action"></span>
+        </header>
+        <div class="data">
+            <form class="nouveau" method="post" action="categorie/ajouter">
+                <span></span>
+                <span><input type="text" name="cat_nom" value=""></span>
+                <span>
+                    <select name="cat_type" id="cat_type">
+                        <option value="">Choisir</option>
+                        <option value="plat">Plat</option>
+                        <option value="vin">Vin</option>
+                    </select>
+                </span>
+                <span class="action">
+                    <button class="btn btn-ajouter btn-plein">ajouter</button>
+                </span>
+            </form>
+
+            {% for categorie in categories %}
+            <form method="post">
+                <span><input readonly type="text" name="cat_id" value="{{categorie.cat_id}}"></span>
+                <span><input type="text" name="cat_nom" value="{{categorie.cat_nom}}"></span>
+                <span>
+                    <select name="cat_type">
+                        <option {{ (categorie.cat_type == 'plat') ? 'selected' : '' }} value="plat">Plat</option>
+                        <option {{ (categorie.cat_type == 'vin') ? 'selected' : '' }} value="vin">Vin</option>
+                    </select>
+                </span>
+                <span class="action">
+                    <button formaction="categorie/changer" class="btn btn-modifier">modifier</button>
+                    <button formaction="categorie/retirer" class="btn btn-supprimer">supprimer</button>
+                </span>
+            </form>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
