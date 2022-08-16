@@ -9,5 +9,5 @@ Cette version intègre plusieurs fonctionnalités que nous n'avons pas eu le tem
 * Envois du courriel de confirmation après la création de compte (encore une fois, code de base seulement pour illustrer la procédure, il y a beaucoup de chose qu'on peut améliorer)
 * Gestion centralisée des messages d'erreurs de l'interface
 
-## Il y a des commentaires partout dans le code, et j'ai essayé de commencé tout code ajouté hors cours par le commentaire suivant : [MODIF HORS COURS]
+## Il y a des commentaires partout dans le code, et j'ai préfixé tout code ajouté hors cours par le commentaire suivant : [MODIF HORS COURS]
     
