@@ -192,7 +192,7 @@ class UtilisateurControleur extends Controleur
         // Localement, par défaut vous n'avez pas de serveur SMTP installé. Il y a
         // plusieurs solutions pour simuler ou configurer un serveur de mail, mais
         // le plus simple pour illustrer cet exemple est d'installer un utilitaire
-        // qui simuyle SMTP comme : 
+        // qui simule SMTP comme "Papercut-SMTP" : https://github.com/ChangemakerStudios/Papercut-SMTP
         mail($courriel, $sujet, $message, implode("\r\n", $entetes));
     }
 }
